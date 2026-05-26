@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beryl Engineering & Properties Ltd. | Construction & Civil Engineering Ibadan</title>
+    <meta name="description" content="Beryl Engineering & Properties Ltd. is a trusted civil engineering and construction company in Ibadan, specializing in building construction, project management, site supervision, and property development in Nigeria.">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Corporate Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind Custom Color Configurations -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        berylWhite: '#ffffff',
+                        berylBlue: '#00a0dc',
+                        berylGreen: '#4fe14a',
+                        berylNavy: '#17213f',
+                        berylDarkGreen: '#318c2e',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .geometric-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-berylNavy font-sans antialiased overflow-x-hidden">
+
+    <!-- TOP HEADER / LOGO SPACE -->
+    <div class="w-full bg-berylNavy text-white border-b-4 border-berylBlue py-4 px-6 md:px-12 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <!-- Brand Logo Image Link Area -->
+            <a href="#" class="flex items-center">
+                <!-- Swap the src attribute below with your logo image link -->
+                <img id="company-logo" src="logo.png" alt="Beryl Engineering & Properties Ltd. Logo" class="h-12 md:h-16 w-auto object-contain">
+            </a>
+            
+            <!-- Quick Contact / Navigation -->
+            <div class="flex flex-wrap items-center justify-center gap-6 text-sm">
+                <a href="#about" class="hover:text-berylBlue font-medium transition-colors">About Us</a>
+                <a href="#services" class="hover:text-berylBlue font-medium transition-colors">Services</a>
+                <a href="#why-choose-us" class="hover:text-berylBlue font-medium transition-colors">Why Choose Us</a>
+                <a href="#contact" class="bg-berylBlue text-berylNavy px-4 py-2 rounded font-bold hover:bg-white hover:text-berylNavy transition-all shadow-md">
+                    Get Free Consultation
+                </a>
+                <a href="#contact" class="hover:bg-white hover:text-berylNavy transition-all shadow-md">
+                    Contact us.
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION WITH ANIMATED GEOMETRIC BACKGROUND -->
+    <section class="relative bg-gradient-to-br from-berylNavy via-[#1f2d54] to-berylNavy text-white py-24 md:py-36 px-6 overflow-hidden flex items-center min-h-[85vh]">
+        <!-- Interactive HTML5 Canvas Element for geometric animation -->
+        <canvas id="geoCanvas" class="geometric-canvas"></canvas>
+
+        <div class="max-w-5xl mx-auto text-center hero-content">
+            <span class="inline-block bg-berylBlue/10 border border-berylBlue/30 text-berylBlue text-xs md:text-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+                <i class="fa-solid fa-location-dot text-berylGreen mr-2"></i> Serving Ibadan, Oyo State, & Across Nigeria
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                Building Excellence. <br>
+                <span class="text-berylBlue">Delivering Value.</span> Creating Structures.
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                At Beryl Engineering & Properties Ltd., we don’t just build structures we deliver quality, precision, and trust. From concept to completion, we provide expert solutions in civil engineering, construction, project management, and property development tailored to meet modern standards.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#contact" class="w-full sm:w-auto bg-berylBlue text-berylNavy font-bold px-8 py-4 rounded shadow-lg hover:bg-white hover:text-berylNavy transition-all text-center uppercase tracking-wider text-sm">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Get a Free Consultation
+                </a>
+                <a href="#services" class="w-full sm:w-auto border-2 border-slate-400 text-white font-bold px-8 py-3.5 rounded hover:border-berylBlue hover:text-berylBlue transition-all text-center uppercase tracking-wider text-sm">
+                    Explore Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Side Content -->
+            <div class="lg:col-span-7">
+                <div class="flex items-center space-x-2 mb-3">
+                    <span class="h-1 w-8 bg-berylBlue"></span>
+                    <span class="text-berylBlue font-bold tracking-wider uppercase text-sm">Who We Are</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-berylNavy mb-6">About Beryl Engineering & Properties Ltd.</h2>
+                <p class="text-slate-600 mb-4 leading-relaxed text-lg">
+                    Beryl Engineering & Properties Ltd. is a forward thinking engineering and construction company based in Ibadan, Nigeria. We specialize in delivering high-quality infrastructure, building projects, and property solutions with a focus on professionalism, safety, and timely delivery.
+                </p>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    With a team of experienced engineers, project managers, and design experts, we bring technical expertise and practical experience to every project we handle. We understand that every project is an investment, that’s why we prioritize efficiency, transparency, and excellence from start to finish.
+                </p>
+
+                <!-- Vision & Mission Side-by-Side -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="bg-white p-6 rounded-xl border-l-4 border-berylBlue shadow-sm">
+                        <div class="text-berylBlue text-2xl mb-3"><i class="fa-solid fa-eye"></i></div>
+                        <h3 class="font-bold text-lg mb-2">Our Vision</h3>
+                        <p class="text-sm text-slate-600">To be a leading engineering and construction company in Nigeria, known for quality delivery, integrity, and innovation.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border-l-4 border-berylGreen shadow-sm">
+                        <div class="text-berylGreen text-2xl mb-3"><i class="fa-solid fa-bullseye"></i></div>
+                        <h3 class="font-bold text-lg mb-2">Our Mission</h3>
+                        <p class="text-sm text-slate-600">To provide reliable, cost-effective, and high-standard engineering and property solutions that exceed client expectations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side Added Images / Visuals -->
+            <div class="lg:col-span-5 grid grid-cols-2 gap-4 relative">
+                <div class="absolute inset-0 bg-berylBlue/5 rounded-3xl transform rotate-3 -z-10"></div>
+                <img src="2.jpg" alt="Construction site structural framing" class="w-full h-64 object-cover rounded-xl shadow-md mt-6">
+                <img src="1.jpg" alt="Engineer supervising build" class="w-full h-64 object-cover rounded-xl shadow-md">
+                <div class="col-span-2 bg-berylNavy text-white p-6 rounded-xl shadow-lg flex items-center space-x-4">
+                    <div class="text-berylGreen text-4xl font-bold">100%</div>
+                    <p class="text-sm text-slate-300 font-medium">Committed to turning your structural ideas into solid, lasting realities across Nigeria.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- OUR SERVICES SECTION -->
+    <section id="services" class="bg-slate-100 py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="flex justify-center items-center space-x-2 mb-3">
+                    <span class="h-1 w-6 bg-berylBlue"></span>
+                    <span class="text-berylBlue font-bold tracking-wider uppercase text-sm">Capabilities</span>
+                    <span class="h-1 w-6 bg-berylBlue"></span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-berylNavy">Our Engineering & Property Services</h2>
+                <p class="text-slate-600 mt-4">We pool technical expertise and precision tracking across six core areas of general structural and engineering execution.</p>
+            </div>
+
+            <!-- Service Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-slate-200">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=600&q=80" alt="Civil Engineering" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-berylBlue/10 text-berylBlue flex items-center justify-center rounded-lg text-xl font-bold mb-4">01</div>
+                        <h3 class="text-xl font-bold mb-2">Civil Engineering & Construction</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">We deliver durable and high quality construction projects including residential, commercial, and industrial buildings. From foundation to finishing, we ensure structural integrity and excellence.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-slate-200">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Project Management" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-berylBlue/10 text-berylBlue flex items-center justify-center rounded-lg text-xl font-bold mb-4">02</div>
+                        <h3 class="text-xl font-bold mb-2">Project Management</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">We manage your projects with precision planning, budgeting, execution, and delivery, ensuring timelines are met and costs are strictly controlled from day one.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-slate-200">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="site.jpg" alt="Site Supervision" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-berylBlue/10 text-berylBlue flex items-center justify-center rounded-lg text-xl font-bold mb-4">03</div>
+                        <h3 class="text-xl font-bold mb-2">Site Supervision</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Our experienced supervisors ensure that every stage of construction meets rigid industry standards, localized safety regulations, and original architectural specifications.</p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-slate-200">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" alt="Interior Design" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-berylBlue/10 text-berylBlue flex items-center justify-center rounded-lg text-xl font-bold mb-4">04</div>
+                        <h3 class="text-xl font-bold mb-2">Interior & Exterior Design</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">We create visually appealing and highly functional spaces tailored to your personal taste and commercial purpose — from modern minimalist interiors to stunning structural exteriors.</p>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-slate-200">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Procurement" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-berylBlue/10 text-berylBlue flex items-center justify-center rounded-lg text-xl font-bold mb-4">05</div>
+                        <h3 class="text-xl font-bold mb-2">Procurement Services</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">We source and supply certified high-quality construction materials and finishes, ensuring optimal long-term durability and localized cost efficiency for our clients.</p>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-slate-200">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="General Contracts" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-berylBlue/10 text-berylBlue flex items-center justify-center rounded-lg text-xl font-bold mb-4">06</div>
+                        <h3 class="text-xl font-bold mb-2">General Contracts</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">We handle a wide range of infrastructure and property contracts, delivering multi-tier projects with professionalism, absolute accountability, and strict attention to structural detail.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US & APPROACH SECTION -->
+    <section id="why-choose-us" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <!-- Value Provisions -->
+            <div>
+                <div class="flex items-center space-x-2 mb-3">
+                    <span class="h-1 w-8 bg-berylGreen"></span>
+                    <span class="text-berylDarkGreen font-bold tracking-wider uppercase text-sm">Our Edge</span>
+                </div>
+                <h2 class="text-3xl font-bold text-berylNavy mb-4">Why Choose Beryl Engineering?</h2>
+                <p class="text-slate-600 mb-8">At Beryl Engineering & Properties Ltd., your project is treated with the seriousness and expertise it deserves. Here is why clients rely on us:</p>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <div class="text-berylDarkGreen bg-berylGreen/20 px-2.5 py-1 rounded text-sm font-bold mt-1"><i class="fa-solid fa-check"></i></div>
+                        <div>
+                            <h4 class="font-bold text-berylNavy">Experienced and skilled professionals</h4>
+                            <p class="text-sm text-slate-500">Engineers and design specialists with years of direct site deployment experience.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="text-berylDarkGreen bg-berylGreen/20 px-2.5 py-1 rounded text-sm font-bold mt-1"><i class="fa-solid fa-check"></i></div>
+                        <div>
+                            <h4 class="font-bold text-berylNavy">Commitment to quality and durability</h4>
+                            <p class="text-sm text-slate-500">Zero compromise on materials, structural integrity, and architectural standards.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="text-berylDarkGreen bg-berylGreen/20 px-2.5 py-1 rounded text-sm font-bold mt-1"><i class="fa-solid fa-check"></i></div>
+                        <div>
+                            <h4 class="font-bold text-berylNavy">Timely project delivery & Transparent communication</h4>
+                            <p class="text-sm text-slate-500">We work to schedules, provide step-by-step reporting, and eliminate hidden costs.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="text-berylDarkGreen bg-berylGreen/20 px-2.5 py-1 rounded text-sm font-bold mt-1"><i class="fa-solid fa-check"></i></div>
+                        <div>
+                            <h4 class="font-bold text-berylNavy">Cost-effective solutions & Modern building standards</h4>
+                            <p class="text-sm text-slate-500">Optimizing structural strategy to respect your budget while meeting global trends.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operational Approach Roadmap -->
+            <div class="bg-berylNavy text-white p-8 md:p-10 rounded-2xl shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-berylBlue/10 rounded-full transform translate-x-10 -translate-y-10"></div>
+                <h3 class="text-2xl font-bold mb-2 text-white">Our Structured Approach</h3>
+                <p class="text-slate-400 text-sm mb-8">How we systematically steer your project framework toward success:</p>
+                
+                <div class="relative border-l-2 border-berylBlue/30 pl-6 space-y-6">
+                    <!-- Step 1 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 bg-berylBlue text-berylNavy w-4 h-4 rounded-full border-4 border-berylNavy"></div>
+                        <h4 class="font-bold text-berylBlue text-sm uppercase tracking-wide">1. Consultation & Planning</h4>
+                        <p class="text-slate-300 text-sm mt-1">Understanding your functional goals, site variables, and long-term targets.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 bg-berylBlue text-berylNavy w-4 h-4 rounded-full border-4 border-berylNavy"></div>
+                        <h4 class="font-bold text-berylBlue text-sm uppercase tracking-wide">2. Design & Strategy</h4>
+                        <p class="text-slate-300 text-sm mt-1">Creating practical blueprints, accurate cost estimates, and logistical timelines.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 bg-berylBlue text-berylNavy w-4 h-4 rounded-full border-4 border-berylNavy"></div>
+                        <h4 class="font-bold text-berylBlue text-sm uppercase tracking-wide">3. Execution</h4>
+                        <p class="text-slate-300 text-sm mt-1">Deploying resources, managing materials, and constructing with modern machinery.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 bg-berylBlue text-berylNavy w-4 h-4 rounded-full border-4 border-berylNavy"></div>
+                        <h4 class="font-bold text-berylBlue text-sm uppercase tracking-wide">4. Monitoring & Supervision</h4>
+                        <p class="text-slate-300 text-sm mt-1">Running continuous safety testing and design verification at every structural stage.</p>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 bg-berylGreen text-berylNavy w-4 h-4 rounded-full border-4 border-berylNavy"></div>
+                        <h4 class="font-bold text-berylGreen text-sm uppercase tracking-wide">5. Completion & Handover</h4>
+                        <p class="text-slate-300 text-sm mt-1">Delivering a fully finalized, turn-key asset you can structurally trust long-term.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION (CTA) WITH CONTACT BLOCK -->
+    <section id="contact" class="bg-gradient-to-r from-berylNavy to-[#1b274a] text-white py-16 px-6 relative border-t-4 border-berylGreen">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Text Content Area -->
+            <div class="lg:col-span-6">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Let’s Build Something <br><span class="text-berylGreen">Great Together</span></h2>
+                <p class="text-slate-300 mb-8 max-w-lg">
+                    Looking for a reliable engineering and construction company in Ibadan? Partner with Beryl Engineering & Properties Ltd. today and experience quality service delivery you can trust.
+                </p>
+                
+                <!-- Explicit Contact Information -->
+                <div class="space-y-6 bg-black/20 p-6 rounded-xl border border-slate-700">
+                    <div class="flex items-center space-x-4">
+                        <div class="text-berylBlue text-2xl w-10 h-10 bg-white/5 flex items-center justify-center rounded-lg"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <div>
+                            <span class="block text-xs uppercase text-slate-400 font-bold tracking-wider">Office Address</span>
+                            <span class="text-sm font-semibold">10 Block 6, Merit Plaza, Opposite Justrite Superstore, Akobo, Ibadan.</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="text-berylGreen text-2xl w-10 h-10 bg-white/5 flex items-center justify-center rounded-lg"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div>
+                            <span class="block text-xs uppercase text-slate-400 font-bold tracking-wider">Call Contact</span>
+                            <a href="tel:08133468405" class="text-sm font-bold text-white hover:text-berylGreen transition-colors">08133468405</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="text-berylBlue text-2xl w-10 h-10 bg-white/5 flex items-center justify-center rounded-lg"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <div>
+                            <span class="block text-xs uppercase text-slate-400 font-bold tracking-wider">Email Inquiry</span>
+                            <a href="mailto:berylengineeringpropertiesltd@gmail.com" class="text-sm font-semibold text-white hover:text-berylBlue transition-colors break-all">berylengineeringpropertiesltd@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Action Form Integration -->
+            <div class="lg:col-span-6 bg-white text-berylNavy p-8 rounded-2xl shadow-xl">
+                <h3 class="text-xl font-bold mb-1">Request a Quote</h3>
+                <p class="text-xs text-slate-500 mb-6">Fill in details for immediate operational review.</p>
+                
+                <form onsubmit="event.preventDefault(); alert('Thank you! Beryl Engineering will contact you shortly.');" class="space-y-4">
+                    <div>
+                        <label class="block text-xs uppercase font-bold tracking-wider text-slate-600 mb-1">Your Name</label>
+                        <input type="text" required class="w-full border border-slate-300 px-4 py-2.5 rounded focus:outline-none focus:border-berylBlue text-sm bg-slate-50" placeholder="John Doe">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs uppercase font-bold tracking-wider text-slate-600 mb-1">Phone Number</label>
+                            <input type="tel" required class="w-full border border-slate-300 px-4 py-2.5 rounded focus:outline-none focus:border-berylBlue text-sm bg-slate-50" placeholder="08000000000">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-bold tracking-wider text-slate-600 mb-1">Service Required</label>
+                            <select class="w-full border border-slate-300 px-4 py-2.5 rounded focus:outline-none focus:border-berylBlue text-sm bg-slate-50 text-slate-700">
+                                <option>Civil Construction</option>
+                                <option>Project Management</option>
+                                <option>Site Supervision</option>
+                                <option>Interior/Exterior Design</option>
+                                <option>Others.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-bold tracking-wider text-slate-600 mb-1">Brief Project Note</label>
+                        <textarea rows="3" required class="w-full border border-slate-300 px-4 py-2.5 rounded focus:outline-none focus:border-berylBlue text-sm bg-slate-50" placeholder="Describe the site scale, location constraints, etc."></textarea>
+                    </div>
+                    <a href="https://wa.me/2340905 090 9431?text=Hi%20Techthere%2C%20I%20want%20to%20submit%20a%20request" 
+   target="_blank"
+   class="w-full bg-berylBlue text-berylNavy font-bold uppercase tracking-wider py-3 rounded hover:bg-berylNavy hover:text-white transition-all text-sm shadow-md text-center block">
+   Submit Request Now
+</a>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER WITH STRATEGIC SEO BLOCK -->
+    <footer class="bg-slate-900 text-slate-400 text-sm py-12 px-6 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-10">
+                <!-- Branding Context -->
+                <div class="md:col-span-5 space-y-4">
+                    <span class="text-white font-bold text-lg uppercase tracking-wider block">BERYL ENGINEERING & PROPERTIES LTD</span>
+                    <!-- SEO Keyword Anchoring -->
+                    <p class="text-xs text-slate-500 leading-relaxed text-justify">
+                        Beryl Engineering & Properties Ltd. is a trusted civil engineering and construction company in Ibadan, specializing in building construction, project management, site supervision, interior and exterior design, procurement services, and general contracts in Nigeria. We deliver reliable and cost-effective engineering solutions for residential, commercial, and industrial projects across Ibadan and beyond.
+                    </p>
+                </div>
+                
+                <!-- Quick References Link Grid -->
+                <div class="md:col-span-3 md:col-start-7 space-y-2">
+                    <span class="text-white font-semibold block text-xs uppercase tracking-wider mb-2">Corporate Segments</span>
+                    <a href="#about" class="block text-xs hover:text-berylBlue transition-colors">Corporate History</a>
+                    <a href="#services" class="block text-xs hover:text-berylBlue transition-colors">Service Scope Parameters</a>
+                    <a href="#why-choose-us" class="block text-xs hover:text-berylBlue transition-colors">Structural Methodologies</a>
+                </div>
+
+                <!-- Footer Location Context -->
+                <div class="md:col-span-3 space-y-2">
+                    <span class="text-white font-semibold block text-xs uppercase tracking-wider mb-2">Regional Operations</span>
+                    <p class="text-xs text-slate-500">Primary Hub: Ibadan, Oyo State, Nigeria.</p>
+                    <p class="text-xs text-slate-500">Cross-regional execution active across Western Nigeria jurisdictions.</p>
+                </div>
+            </div>
+
+            <hr class="border-slate-800 my-6">
+
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+                <p>&copy; 2026 Beryl Engineering & Properties Ltd. All Rights Reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-slate-400"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-slate-400"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-slate-400"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE GEOMETRIC BACKGROUND ANIMATION SCRIPT (HTML5 Canvas API) -->
+    <script>
+        const canvas = document.getElementById('geoCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let particlesArray = [];
+        const numberOfParticles = 45; // Density of shapes
+
+        // Sync size to parent hero container bounds
+        function setCanvasSize() {
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+        }
+        setCanvasSize();
+        window.addEventListener('resize', () => {
+            setCanvasSize();
+            initParticles();
+        });
+
+        // Shape blueprint
+        class GeometricNode {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                // Speeds of drifting
+                this.vx = (Math.random() - 0.5) * 0.6;
+                this.vy = (Math.random() - 0.5) * 0.6;
+                this.radius = Math.random() * 3 + 2;
+                // Assign shape variant types randomly (0 = square, 1 = triangle, 2 = circle)
+                this.shapeType = Math.floor(Math.random() * 3);
+            }
+
+            draw() {
+                ctx.fillStyle = 'rgba(0, 160, 220, 0.25)'; // #00a0dc with custom opacity
+                ctx.strokeStyle = 'rgba(79, 225, 74, 0.15)'; // #4fe14a geometric outline variant
+                ctx.lineWidth = 1.5;
+
+                ctx.beginPath();
+                if (this.shapeType === 0) {
+                    // Render Square
+                    ctx.rect(this.x - this.radius, this.y - this.radius, this.radius * 2, this.radius * 2);
+                } else if (this.shapeType === 1) {
+                    // Render Triangle
+                    let h = this.radius * (Math.sqrt(3)/2);
+                    ctx.moveTo(this.x, this.y - h);
+                    ctx.lineTo(this.x - this.radius, this.y + h);
+                    ctx.lineTo(this.x + this.radius, this.y + h);
+                    ctx.closePath();
+                } else {
+                    // Render Circle
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                }
+                ctx.fill();
+                ctx.stroke();
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Bounce boundaries securely within hero viewport container 
+                if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+                if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new GeometricNode());
+            }
+        }
+
+        // Draw structural connection webs dynamically based on distance vectors
+        function connectNodes() {
+            let maxDistance = 135;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let dx = particlesArray[a].x - particlesArray[b].x;
+                    let dy = particlesArray[a].y - particlesArray[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < maxDistance) {
+                        let opacity = (1 - (distance / maxDistance)) * 0.12;
+                        ctx.strokeStyle = `rgba(0, 160, 220, ${opacity})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            connectNodes();
+            requestAnimationFrame(animate);
+        }
+
+        initParticles();
+        animate();
+    </script>
+</body>
+</html>
