@@ -366,19 +366,19 @@
                 <h3 class="text-xl font-bold mb-1">Request a Quote</h3>
                 <p class="text-xs text-slate-500 mb-6">Fill in details for immediate operational review.</p>
                 
-                <form onsubmit="event.preventDefault(); alert('Thank you! Beryl Engineering will contact you shortly.');" class="space-y-4">
+                <form id="berylContactForm" class="space-y-4">
                     <div>
                         <label class="block text-xs uppercase font-bold tracking-wider text-slate-600 mb-1">Your Name</label>
-                        <input type="text" required class="w-full border border-slate-300 px-4 py-2.5 rounded focus:outline-none focus:border-berylBlue text-sm bg-slate-50" placeholder="John Doe">
+                        <input type="text" id="fullName" required class="w-full border border-slate-300 px-4 py-2.5 rounded focus:outline-none focus:border-berylBlue text-sm bg-slate-50" placeholder="John Doe">
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs uppercase font-bold tracking-wider text-slate-600 mb-1">Phone Number</label>
-                            <input type="tel" required class="w-full border border-slate-300 px-4 py-2.5 rounded focus:outline-none focus:border-berylBlue text-sm bg-slate-50" placeholder="08000000000">
+                            <input type="tel" id="phoneNumber" required class="w-full border border-slate-300 px-4 py-2.5 rounded focus:outline-none focus:border-berylBlue text-sm bg-slate-50" placeholder="08000000000">
                         </div>
                         <div>
                             <label class="block text-xs uppercase font-bold tracking-wider text-slate-600 mb-1">Service Required</label>
-                            <select class="w-full border border-slate-300 px-4 py-2.5 rounded focus:outline-none focus:border-berylBlue text-sm bg-slate-50 text-slate-700">
+                            <select id="serviceRequired" class="w-full border border-slate-300 px-4 py-2.5 rounded focus:outline-none focus:border-berylBlue text-sm bg-slate-50 text-slate-700">
                                 <option>Civil Construction</option>
                                 <option>Project Management</option>
                                 <option>Site Supervision</option>
@@ -389,12 +389,11 @@
                     </div>
                     <div>
                         <label class="block text-xs uppercase font-bold tracking-wider text-slate-600 mb-1">Brief Project Note</label>
-                        <textarea rows="3" required class="w-full border border-slate-300 px-4 py-2.5 rounded focus:outline-none focus:border-berylBlue text-sm bg-slate-50" placeholder="Describe the site scale, location constraints, etc."></textarea>
+                        <textarea id="projectNote" rows="3" required class="w-full border border-slate-300 px-4 py-2.5 rounded focus:outline-none focus:border-berylBlue text-sm bg-slate-50" placeholder="Describe the site scale, location constraints, etc."></textarea>
                     </div>
     
    
 
-    <!-- Form Submit Button -->
     <button 
         type="submit"
         class="w-full bg-berylBlue text-berylNavy font-bold uppercase tracking-wider py-3 rounded hover:bg-berylNavy hover:text-white transition-all text-sm shadow-md text-center block cursor-pointer">
@@ -406,20 +405,16 @@
         </div>
     </section>
 
-    <!-- FOOTER WITH STRATEGIC SEO BLOCK -->
     <footer class="bg-slate-900 text-slate-400 text-sm py-12 px-6 border-t border-slate-800">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-10">
-                <!-- Branding Context -->
                 <div class="md:col-span-5 space-y-4">
                     <span class="text-white font-bold text-lg uppercase tracking-wider block">BERYL ENGINEERING & PROPERTIES LTD</span>
-                    <!-- SEO Keyword Anchoring -->
                     <p class="text-xs text-slate-500 leading-relaxed text-justify">
                         Beryl Engineering & Properties Ltd. is a trusted civil engineering and construction company in Ibadan, specializing in building construction, project management, site supervision, interior and exterior design, procurement services, and general contracts in Nigeria. We deliver reliable and cost-effective engineering solutions for residential, commercial, and industrial projects across Ibadan and beyond.
                     </p>
                 </div>
                 
-                <!-- Quick References Link Grid -->
                 <div class="md:col-span-3 md:col-start-7 space-y-2">
                     <span class="text-white font-semibold block text-xs uppercase tracking-wider mb-2">Corporate Segments</span>
                     <a href="#about" class="block text-xs hover:text-berylBlue transition-colors">Corporate History</a>
@@ -427,7 +422,6 @@
                     <a href="#why-choose-us" class="block text-xs hover:text-berylBlue transition-colors">Structural Methodologies</a>
                 </div>
 
-                <!-- Footer Location Context -->
                 <div class="md:col-span-3 space-y-2">
                     <span class="text-white font-semibold block text-xs uppercase tracking-wider mb-2">Regional Operations</span>
                     <p class="text-xs text-slate-500">Primary Hub: Ibadan, Oyo State, Nigeria.</p>
@@ -448,27 +442,30 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVE GEOMETRIC BACKGROUND ANIMATION SCRIPT (HTML5 Canvas API) -->
     <script>
         // Form Submission to WhatsApp Handler
         document.addEventListener('DOMContentLoaded', () => {
-            const phoneInput = document.getElementById('phoneNumber');
-            if (phoneInput) {
-                const parentForm = phoneInput.closest('form');
-                if (parentForm) {
-                    parentForm.addEventListener('submit', function(event) {
-                        event.preventDefault();
-                        
-                        const name = document.getElementById('fullName').value;
-                        const email = document.getElementById('emailAddress').value;
-                        const phone = phoneInput.value;
-                        
-                        const baseText = `I want to submit a request:\n\n👤 Name: ${name}\n✉️ Email: ${email}\n📞 Phone: ${phone}`;
-                        const encodedText = encodeURIComponent(baseText);
-                        
-                        window.open(`https://wa.me/2349050909431?text=${encodedText}`, '_blank');
-                    });
-                }
+            const contactForm = document.getElementById('berylContactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    // Pulling correct fields matching the real HTML form
+                    const name = document.getElementById('fullName').value;
+                    const phone = document.getElementById('phoneNumber').value;
+                    const service = document.getElementById('serviceRequired').value;
+                    const note = document.getElementById('projectNote').value;
+                    
+                    // Alerting user nicely before redirect
+                    alert('Thank you! Beryl Engineering will contact you shortly.');
+                    
+                    // Formatting text for WhatsApp
+                    const baseText = `I want to submit a request to Beryl Engineering:\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n🛠️ Service: ${service}\n📝 Note: ${note}`;
+                    const encodedText = encodeURIComponent(baseText);
+                    
+                    window.open(`https://wa.me/2349050909431?text=${encodedText}`, '_blank');
+                });
             }
         });
 
@@ -481,8 +478,10 @@
 
         // Sync size to parent hero container bounds
         function setCanvasSize() {
-            canvas.width = canvas.parentElement.offsetWidth;
-            canvas.height = canvas.parentElement.offsetHeight;
+            if(canvas && canvas.parentElement) {
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+            }
         }
         setCanvasSize();
         window.addEventListener('resize', () => {
@@ -493,8 +492,8 @@
         // Shape blueprint
         class GeometricNode {
             constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
+                this.x = Math.random() * (canvas.width || 500);
+                this.y = Math.random() * (canvas.height || 500);
                 // Speeds of drifting
                 this.vx = (Math.random() - 0.5) * 0.6;
                 this.vy = (Math.random() - 0.5) * 0.6;
@@ -576,10 +575,13 @@
             requestAnimationFrame(animate);
         }
 
-        initParticles();
-        animate();
+        if (canvas) {
+            initParticles();
+            animate();
+        }
     </script>
 </body>
 </html>
+
 
                     
