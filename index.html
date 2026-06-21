@@ -442,7 +442,7 @@
         </div>
     </footer>
 
-    <script>
+        <script>
         // Form Submission to WhatsApp Handler
         document.addEventListener('DOMContentLoaded', () => {
             const contactForm = document.getElementById('berylContactForm');
@@ -451,27 +451,40 @@
                 contactForm.addEventListener('submit', function(event) {
                     event.preventDefault();
                     
-                    // Pulling correct fields matching the real HTML form
-                    const name = document.getElementById('fullName').value;
-                    const phone = document.getElementById('phoneNumber').value;
-                    const service = document.getElementById('serviceRequired').value;
-                    const note = document.getElementById('projectNote').value;
-                    
-                    // Alerting user nicely before redirect
-                    alert('Thank you! Beryl Engineering will contact you shortly.');
-                    
-                    // Formatting text for WhatsApp
-                    const baseText = `I want to submit a request to Beryl Engineering:\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n🛠️ Service: ${service}\n📝 Note: ${note}`;
-                    const encodedText = encodeURIComponent(baseText);
-                    
-                    window.open(`https://wa.me/2349050909431?text=${encodedText}`, '_blank');
+                    try {
+                        // Pulling correct fields matching the real HTML form safely
+                        const nameEl = document.getElementById('fullName');
+                        const phoneEl = document.getElementById('phoneNumber');
+                        const serviceEl = document.getElementById('serviceRequired');
+                        const noteEl = document.getElementById('projectNote');
+
+                        const name = nameEl ? nameEl.value : 'Not provided';
+                        const phone = phoneEl ? phoneEl.value : 'Not provided';
+                        const service = serviceEl ? serviceEl.value : 'Not provided';
+                        const note = noteEl ? noteEl.value : 'Not provided';
+                        
+                        // Alerting user nicely before redirect
+                        alert('Thank you! Redirecting you to WhatsApp...');
+                        
+                        // Formatting text for WhatsApp
+                        const baseText = `I want to submit a request to Beryl Engineering:\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n🛠️ Service: ${service}\n📝 Note: ${note}`;
+                        const encodedText = encodeURIComponent(baseText);
+                        
+                        // FIX: Changing window.open to window.location.href bypasses browser popup blockers
+                        window.location.href = `https://wa.me/2349050909431?text=${encodedText}`;
+                        
+                    } catch (error) {
+                        console.error("Form submission encountered an error: ", error);
+                    }
                 });
+            } else {
+                console.warn("Could not find element with ID 'berylContactForm'. Check your HTML form tag.");
             }
         });
 
         // Canvas Setup
         const canvas = document.getElementById('geoCanvas');
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas ? canvas.getContext('2d') : null;
 
         let particlesArray = [];
         const numberOfParticles = 45; // Density of shapes
@@ -483,17 +496,20 @@
                 canvas.height = canvas.parentElement.offsetHeight;
             }
         }
-        setCanvasSize();
-        window.addEventListener('resize', () => {
+        
+        if (canvas) {
             setCanvasSize();
-            initParticles();
-        });
+            window.addEventListener('resize', () => {
+                setCanvasSize();
+                initParticles();
+            });
+        }
 
         // Shape blueprint
         class GeometricNode {
             constructor() {
-                this.x = Math.random() * (canvas.width || 500);
-                this.y = Math.random() * (canvas.height || 500);
+                this.x = Math.random() * (canvas ? canvas.width : 500);
+                this.y = Math.random() * (canvas ? canvas.height : 500);
                 // Speeds of drifting
                 this.vx = (Math.random() - 0.5) * 0.6;
                 this.vy = (Math.random() - 0.5) * 0.6;
@@ -503,6 +519,7 @@
             }
 
             draw() {
+                if (!ctx) return;
                 ctx.fillStyle = 'rgba(0, 160, 220, 0.25)'; // #00a0dc with custom opacity
                 ctx.strokeStyle = 'rgba(79, 225, 74, 0.15)'; // #4fe14a geometric outline variant
                 ctx.lineWidth = 1.5;
@@ -527,6 +544,7 @@
             }
 
             update() {
+                if (!canvas) return;
                 this.x += this.vx;
                 this.y += this.vy;
 
@@ -545,6 +563,7 @@
 
         // Draw structural connection webs dynamically based on distance vectors
         function connectNodes() {
+            if (!ctx) return;
             let maxDistance = 135;
             for (let a = 0; a < particlesArray.length; a++) {
                 for (let b = a; b < particlesArray.length; b++) {
@@ -566,6 +585,7 @@
         }
 
         function animate() {
+            if (!ctx || !canvas) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (let i = 0; i < particlesArray.length; i++) {
                 particlesArray[i].update();
@@ -575,13 +595,10 @@
             requestAnimationFrame(animate);
         }
 
-        if (canvas) {
+        if (canvas && ctx) {
             initParticles();
             animate();
         }
     </script>
-</body>
-</html>
-
 
                     
