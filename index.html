@@ -391,11 +391,46 @@
                         <label class="block text-xs uppercase font-bold tracking-wider text-slate-600 mb-1">Brief Project Note</label>
                         <textarea rows="3" required class="w-full border border-slate-300 px-4 py-2.5 rounded focus:outline-none focus:border-berylBlue text-sm bg-slate-50" placeholder="Describe the site scale, location constraints, etc."></textarea>
                     </div>
-                    <a href="https://wa.me/2340905 090 9431?text=Hi%20Techthere%2C%20I%20want%20to%20submit%20a%20request" 
-   target="_blank"
-   class="w-full bg-berylBlue text-berylNavy font-bold uppercase tracking-wider py-3 rounded hover:bg-berylNavy hover:text-white transition-all text-sm shadow-md text-center block">
-   Submit Request Now
-</a>
+     <!-- Name, Email, and Phone Number Lead Capture Fields -->
+    <div class="space-y-4 mb-4 text-left">
+        <div>
+            <label for="fullName" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Full Name</label>
+            <input 
+                type="text" 
+                id="fullName" 
+                required 
+                placeholder="John Doe" 
+                class="w-full px-4 py-2 text-sm border border-slate-700 rounded bg-slate-800 text-white focus:outline-none focus:border-berylBlue"
+            >
+        </div>
+        <div>
+            <label for="emailAddress" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Email Address</label>
+            <input 
+                type="email" 
+                id="emailAddress" 
+                required 
+                placeholder="johndoe@example.com" 
+                class="w-full px-4 py-2 text-sm border border-slate-700 rounded bg-slate-800 text-white focus:outline-none focus:border-berylBlue"
+            >
+        </div>
+        <div>
+            <label for="phoneNumber" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Phone Number</label>
+            <input 
+                type="tel" 
+                id="phoneNumber" 
+                required 
+                placeholder="0905 090 9431" 
+                class="w-full px-4 py-2 text-sm border border-slate-700 rounded bg-slate-800 text-white focus:outline-none focus:border-berylBlue"
+            >
+        </div>
+    </div>
+
+    <!-- Form Submit Button -->
+    <button 
+        type="submit"
+        class="w-full bg-berylBlue text-berylNavy font-bold uppercase tracking-wider py-3 rounded hover:bg-berylNavy hover:text-white transition-all text-sm shadow-md text-center block cursor-pointer">
+        Submit Request Now
+    </button>
                 </form>
             </div>
 
@@ -446,6 +481,29 @@
 
     <!-- INTERACTIVE GEOMETRIC BACKGROUND ANIMATION SCRIPT (HTML5 Canvas API) -->
     <script>
+        // Form Submission to WhatsApp Handler
+        document.addEventListener('DOMContentLoaded', () => {
+            const phoneInput = document.getElementById('phoneNumber');
+            if (phoneInput) {
+                const parentForm = phoneInput.closest('form');
+                if (parentForm) {
+                    parentForm.addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        
+                        const name = document.getElementById('fullName').value;
+                        const email = document.getElementById('emailAddress').value;
+                        const phone = phoneInput.value;
+                        
+                        const baseText = `Hi Techthere, I want to submit a request:\n\n👤 Name: ${name}\n✉️ Email: ${email}\n📞 Phone: ${phone}`;
+                        const encodedText = encodeURIComponent(baseText);
+                        
+                        window.open(`https://wa.me/2349050909431?text=${encodedText}`, '_blank');
+                    });
+                }
+            }
+        });
+
+        // Canvas Setup
         const canvas = document.getElementById('geoCanvas');
         const ctx = canvas.getContext('2d');
 
@@ -554,3 +612,5 @@
     </script>
 </body>
 </html>
+
+                    
